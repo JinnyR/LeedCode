@@ -1,0 +1,21 @@
+class Solution:
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if abs(x)>2**31: return(0)
+        xStr=str(abs(x))
+        L=[]
+
+        for i in xStr:
+            L.append(i)
+        
+        
+        
+        if x>=0 and int("".join(L[::-1]))<2**31: return(int("".join(L[::-1])))
+        elif x<0 and int("".join(L[::-1])) < 2**31:
+            L.extend('-')
+            return(int("".join(L[::-1])))
+        else: return(0)
+        
